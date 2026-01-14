@@ -1,37 +1,27 @@
 # TodoAp
-REST API для управления списком задач, созданное с использованием ASP.NET Core Web API и Entity Framework Core.
+Todo List API
 
-## Технологии
+A simple REST API for managing a Todo List.
+This project is built with ASP.NET Core Web API and Entity Framework Core.
 
-- ASP.NET Core Web API
-- Entity Framework Core (InMemory Database)
-- C# / .NET 8.0
-- REST API
+Technologies
+ASP.NET Core Web API
 
-## Функциональность
+Entity Framework Core (InMemory Database)
+C#
+.NET 6+
+Features
 
-API поддерживает CRUD операции:
+The API supports basic CRUD operations:
 
-- `GET /api/todo` - получить все задачи
-- `GET /api/todo/{id}` - получить задачу по ID
-- `POST /api/todo` - создать задачу
-- `PUT /api/todo/{id}` - обновить задачу
-- `DELETE /api/todo/{id}` - удалить задачу
+GET /api/todo – get all todo items
+GET /api/todo/{id} – get a todo item by id
+POST /api/todo – create a new todo item
+PUT /api/todo/{id} – update an existing todo item
+DELETE /api/todo/{id} – delete a todo item
 
-## Структура проекта
-```
-TodoApi/
-├── Controllers/
-│   └── TodoController.cs
-├── Data/
-│   └── TodoContext.cs
-├── Models/
-│   └── TodoItem.cs
-└── Program.cs
-```
 
-##  Модель данных
-```csharp
+Data Model
 public class TodoItem
 {
     public int Id { get; set; }
@@ -40,48 +30,51 @@ public class TodoItem
     public bool IsCompleted { get; set; }
     public DateTime CreatedAt { get; set; }
 }
-```
 
-## Как запустить
+How to Run the Project
 
-1. Клонируйте репозиторий
-2. Откройте проект в Visual Studio 2022
-3. Нажмите F5 для запуска
-4. API будет доступен по адресу: `http://localhost:5077/api/todo`
+Clone the repository
+Open the project in Visual Studio 2022
+Press F5 to run the project
+Swagger UI will open in the browser to test the API
 
-##  Примеры запросов
 
-### Создание задачи
-```json
-POST /api/todo
+Example Requests
+Create a Todo (POST)
 {
-  "title": "Изучить ASP.NET Core",
-  "description": "Пройти туториал",
+  "title": "Learn ASP.NET Core",
+  "description": "Complete Web API tutorial",
   "isCompleted": false
 }
-```
 
-### Получение всех задач
-```
-GET /api/todo
-```
+Update a Todo (PUT)
+{
+  "id": 1,
+  "title": "Learn ASP.NET Core",
+  "description": "Complete Web API tutorial",
+  "isCompleted": true,
+  "createdAt": "2024-01-15T10:00:00"
+}
 
-##  Что я изучила
+What I Learned
 
--  Создание REST API с ASP.NET Core
--  Работа с Entity Framework Core
--  Реализация CRUD операций
--  Асинхронное программирование (async/await)
--  Dependency Injection
--  RESTful принципы
+While working on this project, I learned how to:
+Build APIs with ASP.NET Core Web API
+Use Entity Framework Core to work with data
+Follow REST principles
+Implement CRUD operations
+Use async and await for asynchronous programming
 
-## Планы на будущее
 
--  [ ] Добавить реальную БД (SQL Server)
-- [ ] Добавить валидацию
-- [ ] Добавить JWT аутентификацию
-- [ ] Написать unit тесты
+Future Improvements
+ Use a real database (SQL Server)
+ Add data validation
+ Add JWT authentication
+ Add unit tests
+ Add pagination for the todo list
 
-##  Автор Marina Khchoian
+Author Marina Khchoian
 
-Проект создан в рамках обучения .NET разработке и подготовки к стажировке.
+[Your Name]
+
+This project was created as part of learning .NET development and preparing for an internship.

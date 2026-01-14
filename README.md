@@ -74,7 +74,4 @@ Future Improvements
  Add pagination for the todo list
 
 Author Marina Khchoian
-
-[Your Name]
-
 This project was created as part of learning .NET development and preparing for an internship.
